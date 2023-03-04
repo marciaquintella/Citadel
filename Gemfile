@@ -80,4 +80,9 @@ group :test do
   gem "selenium-webdriver"
   gem "webdrivers"
 end
-gem "sassc-rails"
+
+
+
+
+#search engine
+gem "algoliasearch-rails"

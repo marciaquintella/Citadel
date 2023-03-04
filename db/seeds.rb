@@ -11,3 +11,32 @@ User.destroy_all
 User.create!(email: "marciaquintella@gmail.com", password: "123456", admin: true)
 User.create!(email: "gabriel.st.martins@gmail.com ", password: "123456", admin: true)
 User.create!(email: "nilcemayumi@gmail.com", password: "123456", admin: true)
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+Language.destroy_all
+
+ruby = Language.create!(name: "Ruby", version: "3.1", source_reference: "	https://rubyapi.org/3.1")
+
+Function.destroy_all
+
+Function.create!
