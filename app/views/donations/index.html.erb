@@ -1,0 +1,17 @@
+<!-- app/views/teddies/index.html.erb -->
+<div class="container">
+  <h1>Doação</h1>
+  <div class="row">
+    <% @donations.each do |donation| %>
+      <div class="col-6 col-md-4">
+        <div class="card">
+          <div class="card-body">
+            <!-- <h5 class="card-title"><%= donation.name %></h5> -->
+            <p>Valor: <%= humanized_money_with_symbol(donation.price) %></p>
+            <%= link_to "Doar", donation_path(donation), class: "btn btn-primary" %>
+          </div>
+        </div>
+      </div>
+    <% end %>
+  </div>
+</div>
