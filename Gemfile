@@ -81,8 +81,5 @@ group :test do
   gem "webdrivers"
 end
 
-
-
-
 #search engine
 gem "algoliasearch-rails"
