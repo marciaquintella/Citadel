@@ -47,7 +47,8 @@ ActiveRecord::Schema[7.0].define(version: 2023_03_04_070251) do
     t.string "donation_sku"
     t.integer "amount_cents", default: 0, null: false
     t.string "checkout_session_id"
-    t.bigint "donation_id", null: false
+    t.bigint "donation_id",
+     null: false
     t.datetime "created_at", null: false
     t.datetime "updated_at", null: false
     t.index ["donation_id"], name: "index_orders_on_donation_id"
