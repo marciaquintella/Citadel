@@ -1,16 +1,36 @@
 <!DOCTYPE html>
+
 <html>
-  <head>
-    <title>Citadel</title>
-    <meta name="viewport" content="width=device-width, initial-scale=1, shrink-to-fit=no">
-    <%= csrf_meta_tags %>
-    <%= csp_meta_tag %>
+    <head>
+      <title>Citadel</title>
+      <meta name="viewport" content="width=device-width, initial-scale=1, shrink-to-fit=no">
+      <%= csrf_meta_tags %>
+      <%= csp_meta_tag %>
+      <link href="app/assets/images/logo-citadel.png" rel="shortcut icon" type="image/x-icon" />
+      <%= stylesheet_link_tag "application", "data-turbo-track": "reload" %>
+      <%= javascript_include_tag "application", "data-turbo-track": "reload", defer: true %>
+    </head>
 
-    <%= stylesheet_link_tag "application", "data-turbo-track": "reload" %>
-    <%= javascript_include_tag "application", "data-turbo-track": "reload", defer: true %>
-  </head>
+    <body>
+      <div class="navbar navbar-expand-sm navbar-light navbar-lewagon">
+        <div class="container-fluid container">
+          <%= link_to root_path, class: "navbar-brand" do %>
+            <%= image_tag "logo-citadel.png" %>
+          <% end %>
+        </div>
+      </div>
 
-  <body>
-    <%= yield %>
-  </body>
+      <div>
+        <%= yield %>
+      </div>
+
+      <div class="footer">
+        <div class="footer-copyright container">
+          © <%= Date.today.year %> Citadel App - A biblioteca de código que tudo vê. <i class="fa-solid fa-van-shuttle"></i> Created at Le Wagon
+        </div>
+        <div class="footer-urls">
+        </div>
+      </div>
+
+    </body>
 </html>
