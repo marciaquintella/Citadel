@@ -32,6 +32,12 @@ gem "rails_admin", "3.0"
 # Devise
 gem "devise"
 
+# Money-rails
+gem 'money-rails'
+
+# Stripe
+gem 'stripe'
+
 # Use Redis adapter to run Action Cable in production
 # gem "redis", "~> 4.0"
 
@@ -80,3 +86,6 @@ group :test do
   gem "selenium-webdriver"
   gem "webdrivers"
 end
+
+#search engine
+gem "algoliasearch-rails"

@@ -1,0 +1,49 @@
+function_name,content,code,class,key_words
++,"Retorna para você uma nova string, juntando (concatenando) as strings inclusas na operação. O resultado da operação realizada com esse método será uma nova string, juntando as duas em um único objeto.","str1 = ""Olá"" 
+str2 = ""mundo"" 
+str3 = str1 + "" "" + str2 
+puts str3 # output: ""Olá mundo""",string,"junto, string, somar, unir, concatenar"
+concat,"Método alternativo para concatenar duas strings. O resultado da operação realizada com esse método será uma nova string, juntando as strings informadas como argumento do método em um único objeto.","str1 = ""Olá""
+str2 = ""mundo""
+str1.concat("" "", str2)
+puts str1 # output: ""Olá mundo""
+",string,"junto, string, somar, unir, concatenar"
+<<,"Método alternativo para concatenar duas strings. O resultado da operação realizada com esse método será uma nova string, juntando as duas em um único objeto.","str1 = ""Olá""
+str2 = ""mundo""
+str1 << "" "" << str2
+puts str1 # output: ""Olá mundo""
+",string,"junto, string, somar, unir, concatenar"
+prepend,"Este método difere de outros métodos de concatenação (junção) de strings em Ruby por inserir o segundo elemento da operação no início da string original, ao invés de agrupá-lo ao fim.","str1 = ""mundo""
+str2 = ""Olá ""
+str1.prepend(str2)
+puts str1 # output: ""Olá mundo""",string,"junto, string, somar, unir, concatenar"
+map,"Em Ruby, o método ""map"" é um método de array que permite aplicar uma transformação a cada elemento da array e retornar uma nova array com os resultados dessa transformação. Assim como outros métodos, ""map"" recebe um bloco de código como parâmetro, tendo sua sintaxe própria.
+
+O bloco passado para o método map é executado uma vez para cada elemento da array original. Dentro do bloco, você pode executar qualquer código para transformar o elemento, e o valor retornado pelo bloco é adicionado à nova array que está sendo criada.","numeros = [1, 2, 3, 4, 5]
+dobro = numeros.map do |numero|
+  numero * 2
+end
+puts dobro # output: [2, 4, 6, 8, 10]
+",array,"altero, elementos, array, todos"
+map!,"Ao incluir uma exclamação no nome de um método que o aceite, em ruby, você o torna um método destrutivo. Normalmente, map não retornaria um novo objeto, a menos que armazenado em uma variável. Ao operar como um método destrutivo, map irá alterar o objeto original.","numeros = [1, 2, 3, 4, 5]
+numeros.map! do |numero|
+  numero * 2
+end
+puts numeros # output: [2, 4, 6, 8, 10]
+",array,"altero, elementos, array, todos"
+even?,"O método even? irá retornar ""true"" ou ""false"" após verificar se o número é par. Caso seja, a resposta será positiva e vice versa.","idade = 28
+puts idade.even? # output true",integer,"número, par, descobrir"
+count,"Para saber o tamanho de uma array em Ruby, você pode usar o método count. Ao operar sobre uma array, esse método irá retornar o número de elementos em uma array na forma de um inteiro.
+
+Esse método, diferente de outros métodos como size e length, permite argumentos na sua sintaxe. Isso é utilizado geralmente para obter o número de elementos que atendem a uma condição específica. Por exemplo, se você quiser saber quantos elementos na array são strings de comprimento 5, pode usar o método count da seguinte forma:","nomes = [""Ana"", ""Beatriz"", ""Carlos"", ""Daniel""]
+puts nomes.count # output: 4
+
+nomes = [""Ana"", ""Beatriz"", ""Carlos"", ""Daniel""]
+puts nomes.count { |nome| nome.length == 5 } # output: 2
+",array,"tamanho, array"
+size,"Para saber o tamanho de uma array em Ruby, você pode usar o método size. Ao operar sobre uma array, esse método irá retornar o número de elementos em uma array na forma de um inteiro.","nomes = [""Ana"", ""Beatriz"", ""Carlos"", ""Daniel""]
+puts nomes.size # output: 4
+",array,"tamanho, array"
+length,"Para saber o tamanho de uma array em Ruby, você pode usar o método length. Ao operar sobre uma array, esse método irá retornar o número de elementos em uma array na forma de um inteiro.","nomes = [""Ana"", ""Beatriz"", ""Carlos"", ""Daniel""]
+puts nomes.length # output: 4
+",array,"tamanho, array"

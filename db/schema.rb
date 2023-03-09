@@ -10,9 +10,17 @@
 #
 # It's strongly recommended that you check this file into your version control system.
 
-ActiveRecord::Schema[7.0].define(version: 2023_02_25_210723) do
+ActiveRecord::Schema[7.0].define(version: 2023_03_04_070251) do
   # These are extensions that must be enabled in order to support this database
   enable_extension "plpgsql"
+
+  create_table "donations", force: :cascade do |t|
+    t.string "sku"
+    t.string "name"
+    t.datetime "created_at", null: false
+    t.datetime "updated_at", null: false
+    t.integer "price_cents", default: 0, null: false
+  end
 
   create_table "functions", force: :cascade do |t|
     t.string "klass"
@@ -34,6 +42,17 @@ ActiveRecord::Schema[7.0].define(version: 2023_02_25_210723) do
     t.datetime "updated_at", null: false
   end
 
+  create_table "orders", force: :cascade do |t|
+    t.string "state"
+    t.string "donation_sku"
+    t.integer "amount_cents", default: 0, null: false
+    t.string "checkout_session_id"
+    t.bigint "donation_id", null: false
+    t.datetime "created_at", null: false
+    t.datetime "updated_at", null: false
+    t.index ["donation_id"], name: "index_orders_on_donation_id"
+  end
+
   create_table "users", force: :cascade do |t|
     t.string "email", default: "", null: false
     t.string "encrypted_password", default: "", null: false
@@ -48,4 +67,5 @@ ActiveRecord::Schema[7.0].define(version: 2023_02_25_210723) do
   end
 
   add_foreign_key "functions", "languages"
+  add_foreign_key "orders", "donations"
 end
