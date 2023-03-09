@@ -2,3 +2,6 @@
 import "@hotwired/turbo-rails"
 import "./controllers"
 import "bootstrap"
+import hljs from 'highlight.js';
+//hljs.registerLanguage('ruby', ruby);
+hljs.highlightAll();
