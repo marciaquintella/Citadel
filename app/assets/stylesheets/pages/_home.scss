@@ -1,1 +1,66 @@
 // Specific CSS for your home-page
+body{
+  background-color: #2C394B;
+  color: #FF4C29;
+}
+
+.search-input{
+  margin: auto;
+  padding: 200px 0;
+}
+
+.btn-primary{
+  background-color: #FF4C29;
+  width: 200px;
+  border-radius: 5px;
+  border-color: #ff2a00;
+}
+
+.btn-primary:hover{
+  background-color: #ff2a00;
+  border-color: #ff2a00;
+}
+
+form {
+  background-color: #FF4C29;
+  width: 75%;
+  height: 120px;
+  border-radius: 5px;
+  display: flex;
+  flex-direction: row;
+  align-items: center;
+  margin: auto;
+}
+
+input {
+  all: unset;
+  font: 36px system-ui;
+  color: #fff;
+  height: 100%;
+  width: 100%;
+  padding: 6px 10px;
+}
+
+::placeholder {
+  color: #fff;
+  opacity: 0.5;
+}
+
+button {
+  all: unset;
+  cursor: pointer;
+  width: 100px;
+  height: 44px;
+}
+
+svg {
+  color: #fff;
+  fill: currentColor;
+  width: 60px;
+  height: 60px;
+  padding: 10px;
+}
+
+#donation-cta {
+  text-align: center;
+}
