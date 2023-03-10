@@ -1,17 +1,18 @@
-<!-- app/views/teddies/index.html.erb -->
-<div class="container">
-  <h1>Doação</h1>
-  <div class="row">
-    <% @donations.each do |donation| %>
-      <div class="col-6 col-md-4">
-        <div class="card">
-          <div class="card-body">
-            <!-- <h5 class="card-title"><%= donation.name %></h5> -->
-            <p>Valor: <%= humanized_money_with_symbol(donation.price) %></p>
-            <%= link_to "Doar", donation_path(donation), class: "btn btn-primary" %>
-          </div>
+
+
+
+  <div class="container">
+    <h1>Doação</h1>
+    <p>Clique abaixo e faça sua contribuição </p>
+    <div class="m-5">
+        <div class="btn-group">
+            <button type="button" class="btn btn-primary dropdown-toggle" data-bs-toggle="dropdown">Escolha o valor </button>
+            <div class="dropdown-menu">
+                <% @donations.each do |donation| %>
+
+                  <%= link_to humanized_money_with_symbol(donation.price), donation_path(donation), :class => "dropdown-item" %>
+                <% end %>
+            </div>
         </div>
-      </div>
-    <% end %>
+    </div>
   </div>
-</div>
