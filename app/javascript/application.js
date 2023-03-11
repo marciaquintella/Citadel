@@ -38,6 +38,10 @@ search.addWidgets([
   hits({
     container: '#hits',
     templates: {
+      empty(results, { html }) {
+        return html`Não conseguimos encontrar nenhum resultado para esta busca, por favor refaça a pergunta`;
+      },
+
       item(hit, { html, components }) {
         return html`
           <h2>
@@ -45,9 +49,10 @@ search.addWidgets([
           </h2>
           <p>${hit.content}</p>
         `;
-      },
+      }
     },
   })
+
 
 
 ]);
