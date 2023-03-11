@@ -5,7 +5,7 @@ class Function < ApplicationRecord
   algoliasearch do
     attributes :key_words, :function_name, :klass, :content
 
-    searchableAttributes ['key_words', 'function_name', 'klass', 'content']
+    searchableAttributes ['key_words', 'function_name', 'klass']
 
     # customRanking ['desc(key_words)']
   end
