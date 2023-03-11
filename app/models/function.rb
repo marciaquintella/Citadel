@@ -3,7 +3,7 @@ class Function < ApplicationRecord
   include AlgoliaSearch
 
   algoliasearch do
-    attributes :key_words, :function_name, :klass, :content
+    attributes :key_words, :function_name, :klass, :content, :code
 
     searchableAttributes ['key_words', 'function_name', 'klass']
 
