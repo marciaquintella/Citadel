@@ -7,6 +7,7 @@
       <%= csrf_meta_tags %>
       <%= csp_meta_tag %>
       <link href="app/assets/images/logo-citadel.png" rel="shortcut icon" type="image/x-icon" />
+      <link rel="stylesheet" href="https://cdnjs.cloudflare.com/ajax/libs/highlight.js/11.7.0/styles/dark.min.css">
       <%= stylesheet_link_tag "application", "data-turbo-track": "reload" %>
       <%= javascript_include_tag "application", "data-turbo-track": "reload", defer: true %>
     </head>
@@ -19,11 +20,9 @@
           <% end %>
         </div>
       </div>
-
       <div>
         <%= yield %>
       </div>
-
       <div class="footer">
         <div class="footer-copyright container">
           © <%= Date.today.year %> Citadel App - A biblioteca de código que tudo vê. <i class="fa-solid fa-van-shuttle"></i> Created at Le Wagon
@@ -31,6 +30,11 @@
         <div class="footer-urls">
         </div>
       </div>
-
-    </body>
+      <script type="module">
+        import hljs from 'https://cdnjs.cloudflare.com/ajax/libs/highlight.js/11.7.0/es/highlight.min.js';
+        //  and it's easy to individually load additional languages
+        import ruby from 'https://cdnjs.cloudflare.com/ajax/libs/highlight.js/11.7.0/es/languages/ruby.min.js';
+        hljs.registerLanguage('ruby', ruby);
+      </script>
+      </body>
 </html>
