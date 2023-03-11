@@ -20,6 +20,8 @@ form.addEventListener("submit",(event) => {
   searchBox.value = input;
   const eventStart = new Event('input');
   searchBox.dispatchEvent(eventStart);
+  const hits = document.querySelector("#hits");
+  hits.classList.remove('d-none');
 });
 
 
@@ -34,8 +36,20 @@ search.addWidgets([
   }),
 
   hits({
-    container: "#hits"
+    container: '#hits',
+    templates: {
+      item(hit, { html, components }) {
+        return html`
+          <h2>
+            ${components.Highlight({ attribute: 'function_name', hit })}
+          </h2>
+          <p>${hit.content}</p>
+        `;
+      },
+    },
   })
+
+
 ]);
 
 search.start();
