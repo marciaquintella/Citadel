@@ -15,16 +15,19 @@ const searchClient = algoliasearch('R6R7DNKPN0', '21c41349c0a11eed634e6db147e781
 
 const form = document.querySelector("#form")
 
-// const searchMethod = (addEventListener)
 form.addEventListener("submit",(event) => {
   event.preventDefault();
   const searchBox = document.querySelector(".ais-SearchBox-input");
   const input = document.querySelector("#input").value;
   searchBox.value = input;
-  const eventStart = new Event('input');
-  searchBox.dispatchEvent(eventStart);
   const hits = document.querySelector("#hits");
-  hits.classList.remove('d-none');
+  if (searchBox.value !== ""){
+    const eventStart = new Event('input');
+    searchBox.dispatchEvent(eventStart);
+    hits.classList.remove('d-none');
+  } else {
+    hits.classList.add('d-none');
+  }
 });
 
 
@@ -45,21 +48,16 @@ search.addWidgets([
         return html`Não conseguimos encontrar nenhum resultado para esta busca, por favor refaça a pergunta`;
       },
 
-      item(hit, { html, components }) {
+      item(hit, { html }) {
         return html`
           <h2>
-            ${components.Highlight({ attribute: 'function_name', hit })}
+            ${hit.function_name}
           </h2>
           <p>${hit.content}</p>
         `;
       }
     },
   })
-
-
-
 ]);
 
 search.start();
-
-
