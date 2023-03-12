@@ -51,7 +51,7 @@ search.addWidgets([
       item(hit, { html }) {
         return html`
           <h2>
-            ${hit.function_name}
+            ${hit.function_name} - ${hit.klass}
           </h2>
           <p>${hit.content}</p>
         `;
