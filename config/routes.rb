@@ -9,4 +9,5 @@ Rails.application.routes.draw do
   end
   # Defines the root path route ("/")
   # root "articles#index"
+  get "javascript", to: "pages#javascript"
 end

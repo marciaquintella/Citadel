@@ -13,28 +13,33 @@
     </head>
 
     <body>
-      <div class="navbar navbar-expand-sm navbar-light navbar-lewagon">
-        <div class="container-fluid container">
+    <div class="pixels"></div>
+
+    <div class="navbar navbar-expand-sm navbar-light navbar-lewagon">
+      <div class="container-fluid container d-flex flex-column">
+        <div class="logo">
           <%= link_to root_path, class: "navbar-brand" do %>
-            <%= image_tag "logo-citadel.png" %>
+            <%= image_tag("logo-citadel.png", class: "logo" ) %>
           <% end %>
+         <div class="texto-banner"><p>A resposta para suas dúvidas em Ruby e Javascript</p></div>
         </div>
       </div>
-      <div>
-        <%= yield %>
+    </div>
+
+    <%= yield %>
+
+    <div class="footer">
+      <div class="footer-copyright container">
+        © <%= Date.today.year %> Citadel App - A biblioteca de código que tudo vê. <i class="fa-solid fa-van-shuttle"></i> Created at Le Wagon
       </div>
-      <div class="footer">
-        <div class="footer-copyright container">
-          © <%= Date.today.year %> Citadel App - A biblioteca de código que tudo vê. <i class="fa-solid fa-van-shuttle"></i> Created at Le Wagon
-        </div>
-        <div class="footer-urls">
-        </div>
+      <div class="footer-urls">
       </div>
-      <script type="module">
-        import hljs from 'https://cdnjs.cloudflare.com/ajax/libs/highlight.js/11.7.0/es/highlight.min.js';
-        //  and it's easy to individually load additional languages
-        import ruby from 'https://cdnjs.cloudflare.com/ajax/libs/highlight.js/11.7.0/es/languages/ruby.min.js';
-        hljs.registerLanguage('ruby', ruby);
-      </script>
-      </body>
+    </div>
+    <script type="module">
+      import hljs from 'https://cdnjs.cloudflare.com/ajax/libs/highlight.js/11.7.0/es/highlight.min.js';
+      //  and it's easy to individually load additional languages
+      import ruby from 'https://cdnjs.cloudflare.com/ajax/libs/highlight.js/11.7.0/es/languages/ruby.min.js';
+      hljs.registerLanguage('ruby', ruby);
+    </script>
+    </body>
 </html>
