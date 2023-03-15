@@ -10,6 +10,8 @@
       <link rel="stylesheet" href="https://cdnjs.cloudflare.com/ajax/libs/highlight.js/11.7.0/styles/dark.min.css">
       <%= stylesheet_link_tag "application", "data-turbo-track": "reload" %>
       <%= javascript_include_tag "application", "data-turbo-track": "reload", defer: true %>
+
+
     </head>
 
     <body>
@@ -34,12 +36,14 @@
       </div>
       <div class="footer-urls">
       </div>
-    </div>
-    <script type="module">
-      import hljs from 'https://cdnjs.cloudflare.com/ajax/libs/highlight.js/11.7.0/es/highlight.min.js';
-      //  and it's easy to individually load additional languages
-      import ruby from 'https://cdnjs.cloudflare.com/ajax/libs/highlight.js/11.7.0/es/languages/ruby.min.js';
-      hljs.registerLanguage('ruby', ruby);
-    </script>
+      <script src="https://cdn.jsdelivr.net/npm/algoliasearch@4.15.0/dist/algoliasearch-lite.umd.js" integrity="sha256-tJskEBAaO8rEBc+kjX8V7iTCp3nRzOGEsDKS6ckFGOY=" crossorigin="anonymous"></script>
+      <script src="https://cdn.jsdelivr.net/npm/instantsearch.js@4.52.0/dist/instantsearch.production.min.js" integrity="sha256-kdjtbM+kzsFq5LhyAd6euD4RaWProlpgNWpDpu8HGKs=" crossorigin="anonymous"></script>
+
+      <script type="module">
+        import hljs from 'https://cdnjs.cloudflare.com/ajax/libs/highlight.js/11.7.0/es/highlight.min.js';
+        //  and it's easy to individually load additional languages
+        import ruby from 'https://cdnjs.cloudflare.com/ajax/libs/highlight.js/11.7.0/es/languages/ruby.min.js';
+        hljs.registerLanguage('ruby', ruby);
+      </script>
     </body>
 </html>
