@@ -15,22 +15,26 @@
     </head>
 
     <body>
-      <div class="navbar navbar-expand-sm navbar-light navbar-lewagon">
-        <div class="container-fluid container">
+    <div class="pixels"></div>
+
+    <div class="navbar navbar-expand-sm navbar-light navbar-lewagon">
+      <div class="container-fluid container d-flex flex-column">
+        <div class="logo">
           <%= link_to root_path, class: "navbar-brand" do %>
-            <%= image_tag "logo-citadel.png" %>
+            <%= image_tag("logo-citadel.png", class: "logo" ) %>
           <% end %>
+         <div class="texto-banner"><p>A resposta para suas dúvidas em Ruby e Javascript</p></div>
         </div>
       </div>
-      <div>
-        <%= yield %>
+    </div>
+
+    <%= yield %>
+
+    <div class="footer">
+      <div class="footer-copyright container">
+        © <%= Date.today.year %> Citadel App - A biblioteca de código que tudo vê. <i class="fa-solid fa-van-shuttle"></i> Created at Le Wagon
       </div>
-      <div class="footer">
-        <div class="footer-copyright container">
-          © <%= Date.today.year %> Citadel App - A biblioteca de código que tudo vê. <i class="fa-solid fa-van-shuttle"></i> Created at Le Wagon
-        </div>
-        <div class="footer-urls">
-        </div>
+      <div class="footer-urls">
       </div>
       <script src="https://cdn.jsdelivr.net/npm/algoliasearch@4.15.0/dist/algoliasearch-lite.umd.js" integrity="sha256-tJskEBAaO8rEBc+kjX8V7iTCp3nRzOGEsDKS6ckFGOY=" crossorigin="anonymous"></script>
       <script src="https://cdn.jsdelivr.net/npm/instantsearch.js@4.52.0/dist/instantsearch.production.min.js" integrity="sha256-kdjtbM+kzsFq5LhyAd6euD4RaWProlpgNWpDpu8HGKs=" crossorigin="anonymous"></script>
@@ -42,5 +46,4 @@
         hljs.registerLanguage('ruby', ruby);
       </script>
     </body>
-
 </html>

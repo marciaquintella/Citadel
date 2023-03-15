@@ -8,11 +8,22 @@
 }
 
 .navbar-lewagon .navbar-brand{
-  margin: auto;
-  display: block;
+    width: 450px;
+    margin: auto;
+    display: block;
 }
 
-img{
-  width: 200px;
-  height: 200px;
+
+
+img.logo {
+  width: 350px;
+  height: 80px;
+  margin-top: 80px;
+  margin-left: 50px;
+}
+
+
+.texto-banner{
+  width: 100%;
+  text-align: center;
 }
