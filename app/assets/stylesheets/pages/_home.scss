@@ -38,9 +38,12 @@ body{
 }
 
 .btn-primary{
-  background-color: #FF4C29;
   width: 200px;
   border-radius: 5px;
+}
+
+.btn-primary.highlight{
+  background-color: #FF4C29;
   border-color: #FF4C29;
   --bs-btn-active-bg: #8e311e;
   --bs-btn-active-border-color: #FF4C29;
@@ -100,9 +103,13 @@ button {
 
 a.btn.btn-primary.javascript{
   margin-left: -1px;
+  z-index: 1;
+}
+
+a.btn.btn-primary.out{
   color: #f8bcaf;
   background-color: #8f3b2c;
-  z-index: 1;
+  --bs-btn-border-color: #FF4C29;
 }
 
 a.btn.btn-primary:hover{
