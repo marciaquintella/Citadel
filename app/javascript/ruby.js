@@ -35,13 +35,11 @@ if(submit){
     searchClient
   });
 
-
-
   // Create the render function
   const renderHits = (renderOptions, isFirstRender) => {
     const { hits, widgetParams } = renderOptions;
     if(hits.length == 0){
-      widgetParams.container.innerHTML = `<p>Não conseguimos encontrar nenhum resultado para esta busca, por favor refaça a pergunta</p>`
+      widgetParams.container.innerHTML = `<div class="text-center">Não conseguimos encontrar nenhum resultado para esta busca, por favor refaça a pergunta.</div>`
     } else {
       widgetParams.container.innerHTML = `
         <div class="accordion" id="accordionExample">
@@ -57,11 +55,15 @@ if(submit){
                   <div id="collapse${item.objectID}" class="accordion-collapse collapse" aria-labelledby="primeiro" data-bs-parent="#accordionExample">
                     <div class="accordion-body">
                       <p>${item.content}</p>
-                      <p>${hljs.highlight('string = "teste"', {language: 'ruby'}).value}</p>
+                        <pre>
+                          <code class="language-ruby">
+                            ${hljs.highlight(`${item.code}`, {language: 'ruby'}).value}
+                          </code>
+                        </pre>
                     </div>
                   </div>
                 </div>`
-            )
+              )
             .join('')}
         </div>
       `;
@@ -85,5 +87,6 @@ if(submit){
 
   search.start();
 
-  // hljs.highlightAll();
 }
+
+hljs.highlightAll();

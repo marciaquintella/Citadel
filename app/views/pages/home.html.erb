@@ -8,12 +8,13 @@
       </svg>
     </button>
   </div>
+  <div class="botao-language">
+    <%= link_to 'Ruby', " ", :class => "btn btn-primary ruby", onclick:"goToUrl(event)" %>
+    <%= link_to 'Javascript', javascript_path, :class => "btn btn-primary javascript" %>
+  </div>
 </div>
 
-<div class="botao-language">
-  <%= link_to 'Ruby', root_path, :class => "btn btn-primary ruby" %>
-  <%= link_to 'Javascript', javascript_path, :class => "btn btn-primary javascript" %>
-</div>
+
 
 <div>
   <div class="ais-InstantSearch">
@@ -27,3 +28,11 @@
 <div id="donation-cta">
   <%= link_to 'Faça uma doação', donations_path, :class => "btn btn-primary donation-home" %>
 </div>
+
+<pre>
+  <code class="language-ruby">
+    idade = 28
+    puts idade.even? # output true
+    puts "string"
+  </code>
+</pre>
