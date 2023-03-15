@@ -13,14 +13,19 @@ import hljs from 'highlight.js';
 
 
 const searchClient = algoliasearch('R6R7DNKPN0', '21c41349c0a11eed634e6db147e78103');
+const submit = document.querySelector("#submit");
+const input = document.querySelector("#input");
+const logo = document.querySelector("#logo")
 
-const form = document.querySelector("#form")
+logo.addEventListener('click', () => {
+  const url = window.location.href;
+  window.location.href = url;
+});
 
-form.addEventListener("submit",(event) => {
-  event.preventDefault();
+
+const handleSubmit = () => {
   const searchBox = document.querySelector(".ais-SearchBox-input");
-  const input = document.querySelector("#input").value;
-  searchBox.value = input;
+  searchBox.value = input.value;
   const hits = document.querySelector("#hits");
   if (searchBox.value !== ""){
     const eventStart = new Event('input');
@@ -29,8 +34,12 @@ form.addEventListener("submit",(event) => {
   } else {
     hits.classList.add('d-none');
   }
-});
+}
 
+submit.addEventListener("click", handleSubmit);
+input.addEventListener("keydown", (event) => {
+  if(event.keyCode === 13) handleSubmit();
+});
 
 const search = instantsearch({
   indexName: 'Function',
