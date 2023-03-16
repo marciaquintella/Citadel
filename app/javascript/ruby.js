@@ -8,6 +8,7 @@ import hljs from 'highlight.js';
 
 
 const searchClient = algoliasearch('R6R7DNKPN0', '21c41349c0a11eed634e6db147e78103');
+const form = document.querySelector("#form");
 const submit = document.querySelector("#submit");
 const input = document.querySelector("#input");
 
@@ -25,10 +26,23 @@ const handleSubmit = () => {
 }
 
 if(submit){
-  submit.addEventListener("click", handleSubmit);
-  input.addEventListener("keydown", (event) => {
-    if(event.keyCode === 13) handleSubmit();
+  form.addEventListener("submit", (event) => {
+    event.preventDefault();
+    const searchBox = document.querySelector(".ais-SearchBox-input");
+    searchBox.value = input.value;
+    const hits = document.querySelector("#hits");
+    if (searchBox.value !== ""){
+      const eventStart = new Event('input');
+      searchBox.dispatchEvent(eventStart);
+      hits.classList.remove('d-none');
+    } else {
+      hits.classList.add('d-none');
+    }
   });
+  // submit.addEventListener("click", handleSubmit);
+  // input.addEventListener("keydown", (event) => {
+  //   if(event.keyCode === 13) handleSubmit();
+  // });
 
   const search = instantsearch({
     indexName: 'Function',

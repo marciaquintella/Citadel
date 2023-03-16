@@ -1,5 +1,5 @@
 <div class="search-input">
-  <div id="form" role="search">
+  <form id="form" role="search">
     <input type="search" id="input" name="q" placeholder="O que você quer saber?">
     <button id="submit">
       <svg viewBox="0 0 1024 1024">
@@ -7,7 +7,7 @@
         </path>
       </svg>
     </button>
-  </div>
+  </form>
   <div class="botao-language">
     <%= link_to 'Ruby', " ", :class => "btn btn-primary ruby", onclick:"goToRuby(event)" %>
     <%= link_to 'Javascript', javascript_path, :class => "btn btn-primary javascript" %>
