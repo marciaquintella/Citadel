@@ -12,19 +12,6 @@ const form = document.querySelector("#form");
 const submit = document.querySelector("#submit");
 const input = document.querySelector("#input");
 
-const handleSubmit = () => {
-  const searchBox = document.querySelector(".ais-SearchBox-input");
-  searchBox.value = input.value;
-  const hits = document.querySelector("#hits");
-  if (searchBox.value !== ""){
-    const eventStart = new Event('input');
-    searchBox.dispatchEvent(eventStart);
-    hits.classList.remove('d-none');
-  } else {
-    hits.classList.add('d-none');
-  }
-}
-
 if(submit){
   form.addEventListener("submit", (event) => {
     event.preventDefault();
@@ -39,10 +26,6 @@ if(submit){
       hits.classList.add('d-none');
     }
   });
-  // submit.addEventListener("click", handleSubmit);
-  // input.addEventListener("keydown", (event) => {
-  //   if(event.keyCode === 13) handleSubmit();
-  // });
 
   const search = instantsearch({
     indexName: 'Function',
