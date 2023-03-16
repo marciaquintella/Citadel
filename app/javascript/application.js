@@ -11,3 +11,7 @@ window.goToUrl = function(event) {
     window.location.pathname = "/";
   } else window.location.reload();
 };
+
+window.goToRuby = function(event) {
+ window.location.pathname = "/";
+};
