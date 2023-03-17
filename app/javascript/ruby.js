@@ -39,17 +39,17 @@ if(submit){
       widgetParams.container.innerHTML = `<div class="text-center fs-4">Não conseguimos encontrar nenhum resultado para esta busca <i class="fa-regular fa-face-frown-open"></i>, por favor refaça a pergunta.</div>`
     } else {
       widgetParams.container.innerHTML = `
-        <div class="accordion" id="accordionExample">
+        <div class="accordion" id="accordionResults">
           ${hits
             .map(
               item =>
                 `<div class="accordion-item">
-                  <h2 class="accordion-header" id="accordion${item.objectID}">
-                    <button class="accordion-button" type="button" data-bs-toggle="collapse" data-bs-target="#collapse${item.objectID}" aria-expanded="true" aria-controls="collapse${item.objectID}">
+                  <h2 class="accordion-header" id="panelsStayOpen-heading${item.objectID}">
+                    <button class="accordion-button" type="button" data-bs-toggle="collapse" data-bs-target="#panelsStayOpen-collapse${item.objectID}" aria-expanded="true" aria-controls="panelsStayOpen-collapse${item.objectID}">
                       ${item.function_name} - ${item.klass}
                     </button>
                   </h2>
-                  <div id="collapse${item.objectID}" class="accordion-collapse collapse" aria-labelledby="primeiro" data-bs-parent="#accordionExample">
+                  <div id="panelsStayOpen-collapse${item.objectID}" class="accordion-collapse collapse" aria-labelledby="panelsStayOpen-heading${item.objectID}">
                     <div class="accordion-body">
                       <p>${item.content}</p>
                       <div class="code-colors p-4">
@@ -83,3 +83,4 @@ if(submit){
   search.start();
 
 }
+
