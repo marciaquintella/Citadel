@@ -32,6 +32,25 @@ if(submit){
     searchClient
   });
 
+  function urlPath(string) {
+    const regexp = /([a-z]*_?[a-z]*)(.*)/g;
+    const array = [...string.matchAll(regexp)];
+    const pathPrefix = array[0][1];
+    const pathSufix = array[0][2];
+    console.log(pathSufix);
+    let pathSufixHex = '-';
+    if(pathSufix === ""){
+      return pathPrefix;
+    }else{
+    for (var i = 0; i < pathSufix.length; i++) {
+      const char = pathSufix[i];
+      console.log(char.charCodeAt(0));
+      pathSufixHex = pathSufixHex + char.charCodeAt(0).toString(16).toUpperCase();
+    }
+    return pathPrefix + pathSufixHex
+    }
+  };
+
   // Create the render function
   const renderHits = (renderOptions, isFirstRender) => {
     const { hits, widgetParams } = renderOptions;
@@ -55,6 +74,7 @@ if(submit){
                       <div class="code-colors p-4">
                         <pre><code class="language-ruby">${hljs.highlight(`${item.code}`, {language: 'ruby'}).value}</code></pre>
                       </div>
+                      <p class="mt-2">Veja documentação do Ruby sobre este método, <a href="https://rubyapi.org/3.1/o/${item.klass}#method-i-${urlPath(item.function_name)}" class="text-decoration-none" target="_blank">aqui</a></p>
                     </div>
                   </div>
                 </div>`
@@ -83,4 +103,3 @@ if(submit){
   search.start();
 
 }
-
