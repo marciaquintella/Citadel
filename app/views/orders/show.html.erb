@@ -1,7 +1,5 @@
 <!-- app/views/orders/show.html.erb -->
-<div class="container">
-  <div class="row py-4">
-    <div class="col">
+<div class="container payment ckeckout">
       <h1>Pedido #<%= @order.id %> <small><span class="badge badge-primary"></span></small></h1>
       <ul class="list-unstyled">
         <li><strong>Data da transação</strong> <%= @order.created_at.to_date %></li>
@@ -10,6 +8,5 @@
         </li>
       </ul>
       <p><strong>Obrigada por sua doação!</strong></p>
-    </div>
-  </div>
+
 </div>
