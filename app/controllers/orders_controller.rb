@@ -1,9 +1,9 @@
 class OrdersController < ApplicationController
-    skip_before_action :authenticate_user!
+  skip_before_action :authenticate_user!
 
   def create
-    donation = Donation.find(params[:donation_id])
-    order  = Order.create!(donation: donation, donation_sku: donation.sku, amount: donation.price, state: 'pending')
+    donation = Donation.find(params[:order][:donation])
+    order = Order.create!(donation: donation, donation_sku: donation.sku, amount: donation.price, state: 'pending')
 
     session = Stripe::Checkout::Session.create(
       payment_method_types: ['card'],
