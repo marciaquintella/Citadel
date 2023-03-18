@@ -1,9 +1,11 @@
-  <div class="container payment">
-    <p class="contribuition">Clique abaixo e faça sua contribuição </p>
-      <%= simple_form_for @order do |f| %>
-        <%= f.input :donation, label: false do %>
-          <%= f.select :donation, @donations.map { |d| [humanized_money_with_symbol(d.price), d.id] }, prompt: "Escolha o valor"%>
-        <% end %>
-        <%= f.submit "Doar", class: "btn btn-primary"%>
-      <% end %>
-  </div>
+<div class="container payment">
+  <p class="contribuition">Clique abaixo e faça sua contribuição </p>
+      <div class="btn-group">
+          <button type="button" class="btn btn-primary dropdown-toggle" data-bs-toggle="dropdown">Escolha o valor </button>
+          <div class="dropdown-menu">
+            <% @donations.each do |donation| %>
+              <%= link_to "#{humanized_money_with_symbol(donation.price)}", "/orders/#{donation.id}/precreate", class: "dropdown-item" %>
+            <% end %>
+          </div>
+      </div>
+</div>
