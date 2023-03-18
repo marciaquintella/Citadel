@@ -1,9 +1,0 @@
-<!-- app/views/teddies/show.html.erb -->
- <div class="container payment">
-        <p class="contribuition">Você está contribuíndo com <span><%= humanized_money_with_symbol(@donation.price) %></span> para manter esse site!</p>
-        <!-- <p>Valor: <%= humanized_money_with_symbol(@donation.price) %></p> -->
-        <%= form_with url: orders_path do %>
-          <%= hidden_field_tag 'donation_id', @donation.id %>
-          <%= submit_tag 'Continuar', class: 'btn btn-primary continua' %>
-        <% end %>
-</div>

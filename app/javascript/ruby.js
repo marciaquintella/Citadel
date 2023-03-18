@@ -37,14 +37,12 @@ if(submit){
     const array = [...string.matchAll(regexp)];
     const pathPrefix = array[0][1];
     const pathSufix = array[0][2];
-    console.log(pathSufix);
     let pathSufixHex = '-';
     if(pathSufix === ""){
       return pathPrefix;
     }else{
     for (var i = 0; i < pathSufix.length; i++) {
       const char = pathSufix[i];
-      console.log(char.charCodeAt(0));
       pathSufixHex = pathSufixHex + char.charCodeAt(0).toString(16).toUpperCase();
     }
     return pathPrefix + pathSufixHex
