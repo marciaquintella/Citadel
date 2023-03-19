@@ -93,22 +93,23 @@ if(submit){
           <div class="modal-dialog">
             <div class="modal-content">
               <div class="modal-header">
-                <h1 class="modal-title fs-5" id="exampleModalLabel">Feedback</h1>
+                <h1 class="modal-title fs-5" id="exampleModalLabel">Nos ajude a melhorar!</h1>
                 <button type="button" class="btn-close" data-bs-dismiss="modal" aria-label="Close"></button>
               </div>
               <div class="modal-body">
                 <form class="modal-form" action="/feedbacks" method="post">
                   <div class="mb-3">
                     <label for="feedback-content" class="col-form-label">Por que não gostou dos resultados?</label>
-                    <textarea class="form-control" id="feedback-content"></textarea>
-                    <button type="submit" class="btn btn-primary">Enviar</button>
-                  </div>
+                    <textarea class="form-control" id="feedback-content" name="content"></textarea>
+                    <input type="hidden" name="query" value=${input.value} />
+                    <input type="hidden" name="array" value=${ArrayIds.toString()} />
                   </div>
                   <div class="modal-footer">
                     <button type="button" class="btn btn-secondary" data-bs-dismiss="modal">Fechar</button>
-                    <button type="submit" class="btn btn-primary" data-value=">Enviar</button>
+                    <button type="submit" class="btn btn-primary">Enviar</button>
                   </div>
                 </form>
+              </div>
             </div>
           </div>
         </div>
@@ -137,13 +138,7 @@ if(submit){
     likeIcon.classList.toggle("fa-solid");
   }
 
-  window.eventDislike = function(array) {
-    const dislikeIcon = document.querySelector("#dislike");
-    dislikeIcon.classList.toggle("fa-regular");
-    dislikeIcon.classList.toggle("fa-solid");
-    console.log(arguments)
-    console.log(input.value);
-  }
+
   search.start();
 
 }
