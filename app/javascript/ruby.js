@@ -59,6 +59,9 @@ if(submit){
       hits.forEach(element => {
         ArrayIds.push(element.objectID);
       })
+      let question = '';
+      if(hits.length == 1) question = 'ostou da resposta?';
+        else question = 'ostou das respostas?'
       widgetParams.container.innerHTML = `
         <div class="accordion" id="accordionResults">
           ${hits
@@ -84,7 +87,7 @@ if(submit){
             .join('')}
         </div>
         <div class="mt-3">
-          <h5 class="text-center">Gostou da(s) resposta(s)? <i class="fa-regular fa-thumbs-up" onclick="eventLike()" id="like"></i> <button type="button" data-bs-toggle="modal" data-bs-target="#exampleModal">
+          <h5 class="text-center">G${question}<i class="fa-regular fa-thumbs-up" onclick="eventLike()" id="like"></i> <button type="button" data-bs-toggle="modal" data-bs-target="#exampleModal">
           <i class="fa-regular fa-thumbs-down" id="dislike"></i>
         </button></h5>
         <div>
@@ -99,7 +102,7 @@ if(submit){
               <div class="modal-body">
                 <form class="modal-form" action="/feedbacks" method="post">
                   <div class="mb-3">
-                    <label for="feedback-content" class="col-form-label">Por que não gostou dos resultados?</label>
+                    <label for="feedback-content" class="col-form-label">Por que não g${question}</label>
                     <textarea class="form-control" id="feedback-content" name="content"></textarea>
                     <input type="hidden" name="query" value=${input.value} />
                     <input type="hidden" name="array" value=${ArrayIds.toString()} />
