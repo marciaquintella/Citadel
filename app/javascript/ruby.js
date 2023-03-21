@@ -103,9 +103,9 @@ if(submit){
                 <form class="modal-form" action="/feedbacks" method="post">
                   <div class="mb-3">
                     <label for="feedback-content" class="col-form-label">Por que não g${question}</label>
-                    <textarea class="form-control" id="feedback-content" name="content"></textarea>
-                    <input type="hidden" name="query" value=${input.value} />
-                    <input type="hidden" name="array" value=${ArrayIds.toString()} />
+                    <textarea class="form-control" id="feedback-content" name="feedback[content]"></textarea>
+                    <input type="hidden" name="feedback[query]" value=${input.value} />
+                    <input type="hidden" name="feedback[results]" value=${ArrayIds.toString()} />
                   </div>
                   <div class="modal-footer">
                     <button type="button" class="btn btn-secondary" data-bs-dismiss="modal">Fechar</button>
