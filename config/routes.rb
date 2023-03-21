@@ -11,5 +11,5 @@ Rails.application.routes.draw do
   # root "articles#index"
   get "javascript", to: "pages#javascript"
 
-  resources :feedbacks, only: :create
+  resources :feedbacks, only: %i[create index]
 end

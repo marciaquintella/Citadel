@@ -1,0 +1,25 @@
+<div class="container" id="feedbacks">
+  <div>
+    <h1>Feedbacks</h1>
+    <%@feedbacks.each do |feedback|%>
+      <div class="row">
+        <div class="feedback-content">
+          <p>Frase pesquisada:</p>
+          <p><%=feedback[:query]%></p>
+          <p>Feedback recebido:</p>
+          <p><%=feedback[:content]%></p>
+          <p>Resultado da pesquisa:</p>
+          <ul>
+            <%feedback[:results].each do |result|%>
+            <li class="list-group-item">
+              método: <%=result.function_name%>,
+              classe: <%=result.klass%>,
+              <%=link_to 'Editar', "/admin/function/#{result.id}/edit",  target: :_blank%>
+            </li>
+            <%end%>
+          </ul>
+        </div>
+      </div>
+    <%end%>
+  </div>
+</div>

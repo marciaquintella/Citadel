@@ -1,0 +1,22 @@
+#feedbacks{
+  margin-top: -180px;
+  background-color: #FF4C29;
+  position: relative;
+  max-width: 50%;
+}
+
+.feedback-box{
+  position: absolute;
+}
+
+.feedback-content{
+  background-color: #FFFFFF;
+  color:#FF4C29;
+  align-items: center;
+}
+
+#feedbacks > div > h1{
+  color: #082032;
+  padding-top: 8px;
+  text-align: center;
+}
