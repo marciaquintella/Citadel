@@ -4,10 +4,8 @@
     <%@feedbacks.each do |feedback|%>
       <div class="row">
         <div class="feedback-content">
-          <p>Frase pesquisada:</p>
-          <p><%=feedback[:query]%></p>
-          <p>Feedback recebido:</p>
-          <p><%=feedback[:content]%></p>
+          <p>Frase pesquisada: <%=feedback[:query]%></p>
+          <p>Feedback recebido: <%=feedback[:content]%></p>
           <p>Resultado da pesquisa:</p>
           <ul>
             <%feedback[:results].each do |result|%>

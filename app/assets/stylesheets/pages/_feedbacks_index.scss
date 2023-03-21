@@ -3,6 +3,8 @@
   background-color: #FF4C29;
   position: relative;
   max-width: 50%;
+  margin-bottom: 100px;
+
 }
 
 .feedback-box{
@@ -13,6 +15,11 @@
   background-color: #FFFFFF;
   color:#FF4C29;
   align-items: center;
+  border-color: #FF4C29;
+  border-style: solid;
+  border-width: 0 3px 3px 3px;
+  display: flex;
+  flex-direction: column;
 }
 
 #feedbacks > div > h1{
