@@ -1,8 +1,9 @@
 class OrdersController < ApplicationController
   skip_before_action :authenticate_user!
+  attr_accessor :create
 
-  def create
-    donation = Donation.find(params[:order][:donation])
+  def create(donation)
+    donation = Donation.find(donation)
     order = Order.create!(donation: donation, donation_sku: donation.sku, amount: donation.price, state: 'pending')
 
     session = Stripe::Checkout::Session.create(
@@ -29,4 +30,7 @@ class OrdersController < ApplicationController
     @order = Order.find(params[:id])
   end
 
+  def precreate
+    create(params[:id])
+  end
 end
