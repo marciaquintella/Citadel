@@ -62,7 +62,7 @@ if(submit){
               item =>
                 `<div class="accordion-item">
                   <h2 class="accordion-header" id="panelsStayOpen-heading${item.objectID}">
-                    <button class="accordion-button" type="button" data-bs-toggle="collapse" data-bs-target="#panelsStayOpen-collapse${item.objectID}" aria-expanded="true" aria-controls="panelsStayOpen-collapse${item.objectID}">
+                    <button class="accordion-button collapsed" type="button" data-bs-toggle="collapse" data-bs-target="#panelsStayOpen-collapse${item.objectID}" aria-expanded="false" aria-controls="panelsStayOpen-collapse${item.objectID}">
                       ${item.function_name} - ${item.klass}
                     </button>
                   </h2>
