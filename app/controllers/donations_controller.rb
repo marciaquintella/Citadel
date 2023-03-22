@@ -6,4 +6,9 @@ class DonationsController < ApplicationController
     @donations = Donation.all
     @order = Order.new
   end
+
+  def show
+    donation = Donation.find(params[:id])
+    OrdersController.create(donation)
+  end
 end

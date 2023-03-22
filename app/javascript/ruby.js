@@ -53,7 +53,7 @@ if(submit){
   const renderHits = (renderOptions, isFirstRender) => {
     const { hits, widgetParams } = renderOptions;
     if(hits.length == 0){
-      widgetParams.container.innerHTML = `<div class="text-center fs-4">Não conseguimos encontrar nenhum resultado para esta busca <i class="fa-regular fa-face-frown-open"></i>, por favor refaça a pergunta.</div>`
+      widgetParams.container.innerHTML = `<div class="text-center fs-4">Não conseguimos encontrar nenhum resultado para esta busca <i class="fa-regular fa-face-frown-open"></i>,<br> por favor refaça a pergunta.</div>`
     } else {
       const ArrayIds = []
       hits.forEach(element => {
