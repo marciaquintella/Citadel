@@ -3,6 +3,7 @@ import "@hotwired/turbo-rails"
 import "./controllers"
 import "bootstrap"
 import "./ruby"
+import hljs from 'highlight.js';
 
 window.goToUrl = function(event) {
   const path = window.location.pathname;
@@ -15,3 +16,4 @@ window.goToUrl = function(event) {
 window.goToRuby = function(event) {
  window.location.pathname = "/";
 };
+
