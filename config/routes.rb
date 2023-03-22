@@ -10,6 +10,6 @@ Rails.application.routes.draw do
   # Defines the root path route ("/")
   # root "articles#index"
   get "javascript", to: "pages#javascript"
-
+  post 'ai_request', to: 'pages#ai_request'
   get "orders/:id/precreate", to: "orders#precreate"
 end
