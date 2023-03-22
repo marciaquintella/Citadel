@@ -55,6 +55,13 @@ if(submit){
     if(hits.length == 0){
       widgetParams.container.innerHTML = `<div class="text-center fs-4">Não conseguimos encontrar nenhum resultado para esta busca <i class="fa-regular fa-face-frown-open"></i>,<br> por favor refaça a pergunta.</div>`
     } else {
+      const ArrayIds = []
+      hits.forEach(element => {
+        ArrayIds.push(element.objectID);
+      })
+      let question = '';
+      if(hits.length == 1) question = 'ostou da resposta?';
+        else question = 'ostou das respostas?'
       widgetParams.container.innerHTML = `
         <div class="accordion" id="accordionResults">
           ${hits
@@ -76,8 +83,38 @@ if(submit){
                     </div>
                   </div>
                 </div>`
-              )
+            )
             .join('')}
+        </div>
+        <div class="mt-3">
+          <h5 class="text-center">G${question}<i class="fa-regular fa-thumbs-up" onclick="eventLike()" id="like"></i> <button type="button" data-bs-toggle="modal" data-bs-target="#exampleModal">
+          <i class="fa-regular fa-thumbs-down" id="dislike"></i>
+        </button></h5>
+        <div>
+        <!-- Modal -->
+        <div class="modal fade" id="exampleModal" tabindex="-1" aria-labelledby="exampleModalLabel" aria-hidden="true">
+          <div class="modal-dialog">
+            <div class="modal-content">
+              <div class="modal-header">
+                <h1 class="modal-title fs-5" id="exampleModalLabel">Nos ajude a melhorar!</h1>
+                <button type="button" class="btn-close" data-bs-dismiss="modal" aria-label="Close"></button>
+              </div>
+              <div class="modal-body">
+                <form class="modal-form" action="/feedbacks" method="post">
+                  <div class="mb-3">
+                    <label for="feedback-content" class="col-form-label">Por que não g${question}</label>
+                    <textarea class="form-control" id="feedback-content" name="feedback[content]"></textarea>
+                    <input type="hidden" name="feedback[query]" value=${input.value} />
+                    <input type="hidden" name="feedback[results]" value=${ArrayIds.toString()} />
+                  </div>
+                  <div class="modal-footer">
+                    <button type="button" class="btn btn-secondary" data-bs-dismiss="modal">Fechar</button>
+                    <button type="submit" class="btn btn-primary">Enviar</button>
+                  </div>
+                </form>
+              </div>
+            </div>
+          </div>
         </div>
       `;
     }
@@ -97,6 +134,13 @@ if(submit){
     })
 
   ]);
+
+  window.eventLike = function() {
+    const likeIcon = document.querySelector("#like");
+    likeIcon.classList.toggle("fa-regular");
+    likeIcon.classList.toggle("fa-solid");
+  }
+
 
   search.start();
 

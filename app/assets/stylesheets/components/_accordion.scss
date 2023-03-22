@@ -3,17 +3,19 @@
 }
 
 .accordion-button{
-  margin-right: 20px;
+  // margin-right: 20px;
   color: #e72a04;
   /*color: #8f3b2c;*/
   background-color:#c6d2d8;
+  width: -webkit-fill-available;
+  margin-right: 0;
 }
 
 .accordion{
 --bs-accordion-active-color: #e72a04;
 --bs-accordion-active-bg: #eff6fe;
 --bs-accordion-btn-focus-box-shadow: 0 0 0 0.25rem #ff4d2937;
-    width: 96.8%;
+    // width: 96.8%;
 }
 
 .accordion-item {
