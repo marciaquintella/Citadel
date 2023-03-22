@@ -1,0 +1,24 @@
+.javascript-form {
+  background-color: #FF4C29;
+  height: 84px;
+  border-radius: 5px;
+  display: flex;
+  flex-direction: row;
+  align-items: center;
+  margin: auto;
+  margin-top: -120px;
+  position: sticky;
+  z-index: 10;
+  border-style: solid;
+  border-color: initial;
+  border-image: initial;
+}
+
+#ai_request_promt{
+  font: 24px system-ui;
+  color: #082032;
+  height: 100%;
+  width: 100%;
+  padding: 6px 50px;
+  background-color: none;
+}
