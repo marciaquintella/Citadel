@@ -1,0 +1,105 @@
+.container.login{
+  width: 400px;
+  height: 380px;
+  background-color: #FF4C29;
+  border-radius: 20px;
+  color:#082032;
+}
+
+.login-devise{
+  margin-bottom: 100px;
+}
+
+.mb-3.email.optional.user_email{
+  width: 300px;
+}
+
+div.container.payment.login > form {
+  width: 300px;
+}
+
+#new_user > div.form-actions.container{
+  position: absolute;
+  width: 300px;
+}
+
+#new_user > div.form-actions.container > input{
+  margin-top: 300px;
+  width: 200px;
+  background-color: cornsilk;
+}
+
+.form-actions{
+  position: absolute;
+}
+
+
+#new_user.simple_form.new_user{
+  background: none;
+}
+
+input.submit-login {
+  position: relative;
+  margin-top: 300px;
+  width: 300px;
+  background-color: #082032;
+  color: #fff;
+  border-radius: 10px;
+}
+
+
+input.submit-login:hover{
+  background-color: #e1e9ed;
+  color: #082032;
+}
+
+
+.form-check {
+  margin-left: 26px;
+}
+
+
+p.contribuition {
+  font-size: 20px;
+  color: #fff;
+  line-height: 60px;
+}
+
+body > div.container.login.payment > a:nth-child(3){
+  font-size: 14px;
+}
+
+.container.login.payment > a:nth-child(5) {
+  position: relative;
+  font-size: 14px;
+}
+
+.form-check-input {
+  position: relative;
+  padding-left: 36px;
+  top: 20px;
+  padding: 0;
+
+}
+
+.form-check .form-check-input {
+  margin-left: -25px;
+}
+
+
+#new_user > div.form-inputs > fieldset{
+  display: flex;
+}
+
+#new_user > div.form-inputs > fieldset > div > label{
+  padding-top: 26px;
+  margin-left: 10px;
+}
+
+#user_remember_me{
+  margin-left: -25px;
+}
+#new_user > div.form-inputs > fieldset{
+  margin-left: -25px;
+  margin-top: 40px;
+}
