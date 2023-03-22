@@ -21,7 +21,7 @@
             </ul>
           </div>
           <div class="btn-align-right">
-            <%=link_to "Resolvido", edit_feedback_path(feedback[:id])%>
+            <%=render 'modal', feedback_id: feedback[:id]%>
           </div>
         </div>
       <%end%>
