@@ -2,22 +2,29 @@
   <div>
     <h1>Feedbacks</h1>
     <%@feedbacks.each do |feedback|%>
-      <div class="row">
-        <div class="feedback-content">
-          <p>Frase pesquisada: <%=feedback[:query]%></p>
-          <p>Feedback recebido: <%=feedback[:content]%></p>
-          <p>Resultado da pesquisa:</p>
-          <ul>
-            <%feedback[:results].each do |result|%>
-            <li class="list-group-item">
-              método: <%=result.function_name%>,
-              classe: <%=result.klass%>,
-              <%=link_to 'Editar', "/admin/function/#{result.id}/edit",  target: :_blank%>
-            </li>
-            <%end%>
-          </ul>
+      <%unless feedback[:done]%>
+        <div class="row">
+          <div class="feedback-content">
+            <p><strong class="strong-color">Frase pesquisada:</strong> <%=feedback[:query]%></p>
+            <p><strong class="strong-color">Feedback recebido:</strong> <%=feedback[:content]%></p>
+            <p><strong class="strong-color">Resultado da pesquisa:</strong></p>
+            <ul>
+              <%feedback[:results].each do |result|%>
+                  <li class="list-group-item">
+                    <strong class="strong-color">método:</strong> <%=result.function_name%>,
+                    <strong class="strong-color">classe:</strong> <%=result.klass%>,
+                    <%=link_to "/admin/function/#{result.id}/edit",  target: :_blank do%>
+                      <i class="fa-solid fa-pen-to-square"></i>
+                    <%end%>
+                  </li>
+              <%end%>
+            </ul>
+          </div>
+          <div class="btn-align-right">
+            <%=link_to "Resolvido", edit_feedback_path(feedback[:id])%>
+          </div>
         </div>
-      </div>
+      <%end%>
     <%end%>
   </div>
 </div>

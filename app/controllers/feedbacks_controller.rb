@@ -13,9 +13,19 @@ class FeedbacksController < ApplicationController
       {
         query: feedback[:query],
         content: feedback[:content],
-        results: retrieve_results(feedback[:results])
+        results: retrieve_results(feedback[:results]),
+        id: feedback[:id],
+        done: feedback[:done]
       }
     end
+  end
+
+  def edit
+    feedback = Feedback.find(params[:id])
+    feedback.done = true
+    feedback.user_id = current_user.id
+    feedback.save
+    redirect_to feedbacks_path, notice: "Feedback setado para resolvido!"
   end
 
   private

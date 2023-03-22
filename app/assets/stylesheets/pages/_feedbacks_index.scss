@@ -4,7 +4,7 @@
   position: relative;
   max-width: 50%;
   margin-bottom: 100px;
-
+  border-radius: 10px;
 }
 
 .feedback-box{
@@ -13,11 +13,11 @@
 
 .feedback-content{
   background-color: #FFFFFF;
-  color:#FF4C29;
+  color:#082032;
   align-items: start;
   border-color: #FF4C29;
   border-style: solid;
-  border-width: 0 3px 3px 3px;
+  border-width: 0 3px 0 3px;
   display: flex;
   flex-direction: column;
 }
@@ -26,4 +26,35 @@
   color: #082032;
   padding-top: 8px;
   text-align: center;
+}
+
+.btn-align-right{
+  display: flex;
+  align-items:end;
+  background-color: #FFFFFF;
+  border-color: #FF4C29;
+  border-style: solid;
+  border-width: 0 3px 3px 3px;
+  position: relative;
+}
+
+.btn-align-right > a{
+  background-color: #FF4C29;
+  color:#FFFFFF;
+  border-radius: 2px;
+  padding: 3px 5px;
+  text-decoration: none;
+  margin-bottom: 3px;
+  align-items: end;
+  right: 20px;
+  position:absolute;
+  bottom: 5px;
+}
+
+.strong-color {
+  color: #FF4C29;
+}
+
+#feedbacks > div > div > div.feedback-content > ul > li > a {
+  color: #FF4C29;
 }
