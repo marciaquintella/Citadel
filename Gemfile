@@ -92,3 +92,5 @@ gem "algoliasearch-rails"
 
 #AI engine
 gem "ruby-openai"
+
+gem "sidekiq"
