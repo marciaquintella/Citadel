@@ -6,11 +6,8 @@
 // External libraries
 @import "bootstrap/scss/bootstrap";
 @import "font-awesome";
-@import "highlight.js/styles/dark.css";
 
 // Your CSS partials
 @import "components/index";
-@import "components/footer";
-@import "components/navbar";
 @import "pages/index";
-@import "pages/payment";
+

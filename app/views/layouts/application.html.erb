@@ -6,22 +6,24 @@
       <meta name="viewport" content="width=device-width, initial-scale=1, shrink-to-fit=no">
       <%= csrf_meta_tags %>
       <%= csp_meta_tag %>
-      <link href="app/assets/images/logo-citadel.png" rel="shortcut icon" type="image/x-icon" />
-      <link rel="stylesheet" href="https://cdnjs.cloudflare.com/ajax/libs/highlight.js/11.7.0/styles/dark.min.css">
+      <link rel="apple-touch-icon" sizes="180x180" href="/apple-touch-icon.png">
+      <link rel="icon" type="image/png" sizes="32x32" href="/favicon-32x32.png">
+      <link rel="icon" type="image/png" sizes="16x16" href="/favicon-16x16.png">
+      <link rel="manifest" href="/site.webmanifest">
+      <link rel="stylesheet" href="https://cdnjs.cloudflare.com/ajax/libs/highlight.js/11.7.0/styles/an-old-hope.min.css">
       <%= stylesheet_link_tag "application", "data-turbo-track": "reload" %>
       <%= javascript_include_tag "application", "data-turbo-track": "reload", defer: true %>
-
-
     </head>
 
     <body>
+    <%= render 'layouts/messages' %>
     <div class="pixels"></div>
 
     <div class="navbar navbar-expand-sm navbar-light navbar-lewagon">
       <div class="container-fluid container d-flex flex-column">
         <div class="logo">
-          <%= link_to root_path, class: "navbar-brand" do %>
-            <%= image_tag("logo-citadel.png", class: "logo" ) %>
+          <%= link_to '', class: "navbar-brand" do %>
+            <%= image_tag "logo-citadel.png", class: "logo", onclick:"goToUrl(event)"%>
           <% end %>
          <div class="texto-banner"><p>A resposta para suas dúvidas em Ruby e Javascript</p></div>
         </div>
@@ -36,6 +38,7 @@
       </div>
       <div class="footer-urls">
       </div>
+
       <script src="https://cdn.jsdelivr.net/npm/algoliasearch@4.15.0/dist/algoliasearch-lite.umd.js" integrity="sha256-tJskEBAaO8rEBc+kjX8V7iTCp3nRzOGEsDKS6ckFGOY=" crossorigin="anonymous"></script>
       <script src="https://cdn.jsdelivr.net/npm/instantsearch.js@4.52.0/dist/instantsearch.production.min.js" integrity="sha256-kdjtbM+kzsFq5LhyAd6euD4RaWProlpgNWpDpu8HGKs=" crossorigin="anonymous"></script>
 
@@ -44,6 +47,7 @@
         //  and it's easy to individually load additional languages
         import ruby from 'https://cdnjs.cloudflare.com/ajax/libs/highlight.js/11.7.0/es/languages/ruby.min.js';
         hljs.registerLanguage('ruby', ruby);
+        hljs.highlightAll();
       </script>
     </body>
 </html>

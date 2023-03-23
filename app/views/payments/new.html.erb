@@ -1,9 +1,8 @@
 <!-- app/views/payments/new.html.erb -->
-<div class="container">
-  <div class="row py-4">
-    <div class="col">
+ <div class="container payment ckeckout">
+
       <h1>Checkout</h1>
-      <p>Você está doando <strong><%= humanized_money_with_symbol @order.amount %></strong></p>
+      <p class="contribuition">Você está doando <strong><%= humanized_money_with_symbol @order.amount %></strong></p>
       <button id="pay" class="btn btn-primary">Pagar</button>
 
       <script src="https://js.stripe.com/v3/"></script>
@@ -16,6 +15,5 @@
           });
         });
       </script>
-    </div>
-  </div>
+
 </div>

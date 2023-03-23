@@ -11,6 +11,7 @@ body{
   margin-bottom: 60px;
 }
 
+
 .navbar.navbar-expand-sm.navbar-light.navbar-lewagon{
   border-top-style: solid;
   border-width: 5px;
@@ -39,11 +40,18 @@ body{
 
 .btn-primary{
   background-color: #FF4C29;
-  width: 200px;
+  width: 230px;
   border-radius: 5px;
   border-color: #FF4C29;
   --bs-btn-active-bg: #8e311e;
   --bs-btn-active-border-color: #FF4C29;
+}
+
+.btn-primary.continua{
+  width: 255.33px;
+  --bs-btn-disabled-bg: #8e311e;
+  --bs-btn-disabled-border-color: #FF4C29;
+  --bs-btn-disabled-color: #fff;
 }
 
 .btn-primary:hover{
@@ -65,7 +73,6 @@ a.btn.btn-primary {
 
 form {
   background-color: #FF4C29;
-  border: solid 5px;
   height: 84px;
   border-radius: 5px;
   display: flex;
@@ -75,6 +82,10 @@ form {
   margin-top: -120px;
   position: sticky;
   z-index: 10;
+}
+
+form#form{
+  border: solid 5px;
 }
 
 input {
@@ -100,8 +111,6 @@ button {
 
 a.btn.btn-primary.javascript{
   margin-left: -1px;
-  color: #f8bcaf;
-  background-color: #8f3b2c;
   z-index: 1;
 }
 
@@ -109,9 +118,20 @@ a.btn.btn-primary:hover{
   color: #082032;
 }
 
+
+a.btn.btn-primary.donation-home{
+  margin-bottom: 100px;
+  margin-top: 70px;
+}
+
 a.btn.btn-primary.donation-home:hover{
   color: #fff;
   background-color: #e72a04;
+}
+
+a.btn.btn-primary.donation-home{
+  margin-bottom: 100px;
+  margin-top: 70px;
 }
 
 svg {
@@ -123,9 +143,17 @@ svg {
   margin-left: 19px;
 }
 
+body > div.container.payment > div > button:hover{
+  background-color: #e72a04;
+}
+
+body > div.container.payment > form > input.btn.btn-primary.continua:hover{
+  background-color: #e72a04;
+  border-color: #e72a04;
+}
+
 #donation-cta {
   text-align: center;
-  margin-top: 150px;
 }
 
 .botao-language{

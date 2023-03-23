@@ -3,8 +3,54 @@
 .container.donate {
   width: 30%;
   text-align: center;
+  margin-top: -200px;
+  position: relative;
 }
 
-p.container.donate {
+.container.donate > p{
   color: white;
+}
+
+.container.payment{
+  width: 50%;
+  text-align: center;
+  position: relative;
+  margin-top: -200px;
+}
+
+.container.payment.ckeckout{
+  margin-top: -220px;
+}
+
+.container.payment.ckeckout ul li{
+  color: #e1e9ed;
+}
+
+.btn-group > form{
+  height: 37px;
+}
+
+.btn-group{
+  margin-top: 15px;
+}
+
+form > input.btn.btn-primary{
+  --bs-btn-padding-y: 0;
+}
+
+div.container.payment > form {
+  width: 255.33px;
+  height: 38px;
+  margin-top: 30px;
+}
+
+p.contribuition{
+  font-size: 20px;
+  color: #e1e9ed;
+  line-height: 60px;
+}
+
+p.contribuition span{
+  font-weight: bold;
+  font-size: 26px;
 }
