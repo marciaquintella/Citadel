@@ -89,3 +89,6 @@ end
 
 #search engine
 gem "algoliasearch-rails"
+
+#AI engine
+gem "ruby-openai"

@@ -1,0 +1,20 @@
+<div class="container" id="javascript-output">
+  <% if generated_answers %>
+    <div>
+      <% generated_answers.split("```").each do |row|%>
+        <%row.slice!('javascript') if row.start_with?('javascript')%>
+        <%if row.include?(';') || row.include?('//')%>
+          <pre><code class="language-js"><%=row.strip%></code></pre>
+        <%else%>
+          <p><%=row%></p>
+        <%end%>
+      <%end%>
+    </div>
+  <% end %>
+</div>
+
+<script type="module">
+  import hljs from 'https://cdnjs.cloudflare.com/ajax/libs/highlight.js/11.7.0/es/highlight.min.js';
+  //  and it's easy to individually load additional languages
+  hljs.highlightAll();
+</script>

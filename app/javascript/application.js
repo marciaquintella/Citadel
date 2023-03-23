@@ -3,10 +3,11 @@ import "@hotwired/turbo-rails"
 import "./controllers"
 import "bootstrap"
 import "./ruby"
+import hljs from 'highlight.js';
 
 window.goToUrl = function(event) {
   const path = window.location.pathname;
-  const regex = /\/o|\/d/m;
+  const regex = /\/[o|d|u|f]/i;
   if(path.match(regex)) {
     window.location.pathname = "/";
   } else window.location.reload();
@@ -15,3 +16,4 @@ window.goToUrl = function(event) {
 window.goToRuby = function(event) {
  window.location.pathname = "/";
 };
+

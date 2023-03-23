@@ -11,5 +11,7 @@ Rails.application.routes.draw do
   # root "articles#index"
   get "javascript", to: "pages#javascript"
 
+  resources :feedbacks, only: %i[create index edit]
+  post 'ai_request', to: 'pages#ai_request'
   get "orders/:id/precreate", to: "orders#precreate"
 end
