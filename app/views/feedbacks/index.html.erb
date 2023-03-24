@@ -5,7 +5,7 @@
       <%unless feedback[:done]%>
         <div class="row">
           <div class="feedback-content">
-            <p><strong class="strong-color">Frase pesquisada:</strong> <%=feedback[:query]%></p>
+            <p><strong class="strong-color">Frase pesquisada:</strong> <%=feedback[:query].split('%').join(' ')%></p>
             <p><strong class="strong-color">Feedback recebido:</strong> <%=feedback[:content]%></p>
             <p><strong class="strong-color">Resultado da pesquisa:</strong></p>
             <ul>
@@ -28,4 +28,3 @@
     <%end%>
   </div>
 </div>
-

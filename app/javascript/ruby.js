@@ -60,6 +60,8 @@ if(submit){
         ArrayIds.push(element.objectID);
       })
       let question = '';
+      const query = input.value.split(' ').join('%');
+      console.log(query);
       if(hits.length == 1) question = 'ostou da resposta?';
         else question = 'ostou das respostas?'
       widgetParams.container.innerHTML = `
@@ -104,7 +106,7 @@ if(submit){
                   <div class="mb-3">
                     <label for="feedback-content" class="col-form-label">Por que não g${question}</label>
                     <textarea class="form-control" id="feedback-content" name="feedback[content]"></textarea>
-                    <input type="hidden" name="feedback[query]" value=${input.value} />
+                    <input type="hidden" name="feedback[query]" value=${query} />
                     <input type="hidden" name="feedback[results]" value=${ArrayIds.toString()} />
                   </div>
                   <div class="modal-footer">
@@ -145,5 +147,3 @@ if(submit){
   search.start();
 
 }
-
-
